@@ -19,7 +19,15 @@ function beforeCreate (app, api) {
     window.location.pathname = pathname.substr(MOBILE_KEY.length);
   } else {
     BrowserUtils.registerGlobalApp(app);
-    api.addUrlStatistics();
+    if (!window.isTest) {
+      api.addUrlStatistics();
+      for (let key in console) {
+        if (typeof console[key] === 'function') {
+          console[key] = () => {
+          };
+        }
+      }
+    }
   }
 }
 
