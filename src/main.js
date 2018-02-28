@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({mode: 'history'});
 require('./assets/css/reset.css');
 
-function beforeCreate (app) {
+function beforeCreate (app, api) {
   const os = window.os = BrowserUtils.os;
   const pathname = window.location.pathname;
   if (os.isMobile && pathname.indexOf(MOBILE_KEY) !== 0) { // 切换为移动版
@@ -19,12 +19,14 @@ function beforeCreate (app) {
     window.location.pathname = pathname.substr(MOBILE_KEY.length);
   } else {
     BrowserUtils.registerGlobalApp(app);
+    api.addUrlStatistics();
   }
 }
 
 class Entry extends Context {
   constructor (myComponent) {
     super();
+    let api = this.Api;
     this.components = {
       'myComponent': myComponent
     };
@@ -34,7 +36,7 @@ class Entry extends Context {
     this.created = function () {
       let self = this;
       Vue.nextTick(() => {
-        beforeCreate(self);
+        beforeCreate(self, api);
       });
     };
     this.template = '<myComponent></myComponent>';

@@ -129,5 +129,11 @@ module.exports = {
    * */
   addGongzhonghaoArticle: (title, href, description, image, lang, ref) => {
     return new ApiOptions(config.ARTICLE_GONG_ZHONG_HAO, {title, href, description, image, lang, ref}, POST).request();
+  },
+  /**
+   * 添加Url统计记录
+   * */
+  addUrlStatistics: () => {
+    return new ApiOptions(config.ADD_URL_STATISTICS, {}, GET).setParams({url: window.location.href}).setSilence(true).request();
   }
 };

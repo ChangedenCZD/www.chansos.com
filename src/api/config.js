@@ -22,6 +22,10 @@ function articleUrl (path) {
   return `${apiUrl('article/')}${path}`;
 }
 
+function statisticsUrl (path) {
+  return `${apiUrl('statistics/')}${path}`;
+}
+
 module.exports = {
   DEMO: 'https://api.github.com/repos/axios/axios/issues',
   ALIBABA_KEYWORDS: alibabaUrl('keywords'),
@@ -36,5 +40,6 @@ module.exports = {
   ARTICLE: articleUrl(''),
   ARTICLE_PROJECT: articleUrl('project/'),
   ARTICLE_TOU_TIAO: articleUrl('toutiao/'),
-  ARTICLE_GONG_ZHONG_HAO: articleUrl('gongzhonghao/')
+  ARTICLE_GONG_ZHONG_HAO: articleUrl('gongzhonghao/'),
+  ADD_URL_STATISTICS: statisticsUrl('url/add')
 };

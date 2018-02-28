@@ -23,6 +23,11 @@ class ApiOptions extends Class {
     return this;
   }
 
+  setHeaders (headers) {
+    this.options.headers = headers || {};
+    return this;
+  }
+
   /**
    * 设置为静默模式，不显示加载动画
    * */
