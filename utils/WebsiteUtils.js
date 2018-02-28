@@ -29,7 +29,6 @@ function get (href, title, type) {
     href = fixHref(href);
     title = title || '';
     const KEY = `website-list-${href}-${title}-${isNaN(parseInt(type)) ? '' : type}`;
-    console.log(KEY);
     RedisUtils.get(KEY).then(result => {
       if (result && JSON.parse(result).length) {
         resolve(JSON.parse(result));
