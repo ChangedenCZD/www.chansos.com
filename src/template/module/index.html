@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <script>
     var host = window.location.host;
-    if (/chan/.test(host) && window.location.prot < sc === 'http:') {
+    if (/chan/g.test(host) && window.location.protocol === 'http:') {
       window.location.protocol = 'https:';
     }
   </script>
@@ -26,7 +26,8 @@
 </head>
 
 <body>
-<h1 style="display:none;">兔子人开源网一直致力于打造更多开源项目-音像博物馆,实用工具,站长工具,开源,阿里云,今日头条,微信公众号,头条号,开源项目,Github,淘宝客,聚划算,优惠券,短链接,动态数据库</h1>
+<h1 style="display:none;">
+  兔子人开源网一直致力于打造更多开源项目-音像博物馆,实用工具,站长工具,开源,阿里云,今日头条,微信公众号,头条号,开源项目,Github,淘宝客,聚划算,优惠券,短链接,动态数据库</h1>
 <span id="document-timestamp" style="display: none;"><%= htmlWebpackPlugin.options.timestamp %></span>
 <script>
   console.log('Document was create at ' + window.document.querySelector('#document-timestamp').innerText);
