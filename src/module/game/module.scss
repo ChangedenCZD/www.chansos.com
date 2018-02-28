@@ -1,0 +1,12 @@
+@import "../../assets/scss/base";
+
+.game-layout {
+  .game-list {
+    .game-item {
+      display: inline-block;
+      a {
+        display: inline-block;
+      }
+    }
+  }
+}

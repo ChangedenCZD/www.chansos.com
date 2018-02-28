@@ -1,0 +1,28 @@
+@import "../../../assets/scss/base";
+
+.pc-adsLayout-layout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 60px 20px;
+  li {
+    position: relative;
+    margin-bottom: 4px;
+    img {
+      width: 100px;
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, .7);
+      font-size: 12px;
+      line-height: 1;
+      padding: 0 1px;
+      color: wheat;
+      cursor: pointer;
+    }
+  }
+}

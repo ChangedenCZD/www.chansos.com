@@ -1,0 +1,18 @@
+@import "../../../assets/scss/base";
+
+.m-website-layout {
+  .website-layout {
+    .website-type-list {
+      border-radius: 1px;
+      .website-type-name {
+
+      }
+      .website-list {
+        .website-item {
+          display: inline-block;
+          border-radius: 1px;
+        }
+      }
+    }
+  }
+}

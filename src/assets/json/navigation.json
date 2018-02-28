@@ -1,0 +1,22 @@
+[
+  {
+    "title": "首页",
+    "href": "/index.html"
+  },
+  {
+    "title": "热点资讯",
+    "href": "/article.html"
+  },
+  {
+    "title": "推荐网站",
+    "href": "/website.html"
+  },
+  {
+    "title": "淘宝联盟",
+    "href": "/alibaba.html"
+  },
+  {
+    "title": "关于我们",
+    "href": "/about.html"
+  }
+]

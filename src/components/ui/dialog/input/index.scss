@@ -1,0 +1,34 @@
+@import "../../../../assets/scss/base";
+
+.ui-dialog-input-layout {
+  .dialog-area {
+    margin: 0;
+    max-width: 640px;
+    border-radius: rem(3px);
+    .title-area {
+      span {
+        font-size: rem(28px);
+      }
+    }
+    .content-area {
+      span {
+        font-size: rem(22px);
+      }
+    }
+    .operation-area {
+      text-align: right;
+      span {
+        display: inline-block;
+      }
+    }
+    .input-area {
+      border-bottom: 1px solid $blue;
+      input {
+        font-size: rem(20px);
+      }
+    }
+    .length-area {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "../../../../assets/scss/base";
+
+.ui-dialog-selector-layout {
+  .dialog-area {
+    margin: 0;
+    max-width: 640px;
+    border-radius: rem(3px);
+    .title-area {
+      span {
+        font-size: rem(28px);
+      }
+    }
+    .content-area {
+      span {
+        font-size: rem(24px);
+      }
+    }
+    .operation-area {
+      text-align: right;
+      span {
+        display: inline-block;
+      }
+    }
+    .select-area {
+      .select-item {
+        line-height: $s40;
+        .select-item-status-area {
+          width: $s30;
+          height: $s30;
+          border: 2px solid $gray;
+          text-align: center;
+          line-height: $s30;
+          border-radius: $s5;
+        }
+        .select-item-status-area.selected {
+          border-color: $blue;
+        }
+      }
+    }
+  }
+}

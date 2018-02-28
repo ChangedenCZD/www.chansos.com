@@ -1,0 +1,5 @@
+{
+  "module-entry": "index.js",
+  "redirect-url": "/index/index",
+  "page-title": "数据采集"
+}

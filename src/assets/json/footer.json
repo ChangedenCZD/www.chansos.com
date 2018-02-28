@@ -1,0 +1,110 @@
+{
+  "info": [
+    {
+      "class": "mgt10",
+      "content": "兔子人开源网致力于打造成为多种编程语言的开源网站。"
+    },
+    {
+      "class": "",
+      "content": "转载内容版权归作者及来源网站所有，本站原创内容转载请注明来源，商业媒体及纸媒请先联系本站。"
+    },
+    {
+      "class": "mgt10",
+      "content": "站内提供大量与互联网、科学、教育相关的内容。大家能从中了解到更多新的知识。所有的信息皆开源，请勿擅自用于商业运作。"
+    }
+  ],
+  "link": [
+    {
+      "class": "",
+      "content": "阿里云",
+      "href": "https://cn.aliyun.com"
+    },
+    {
+      "class": "",
+      "content": "腾讯云",
+      "href": "https://cloud.tencent.com"
+    },
+    {
+      "class": "",
+      "content": "百度云",
+      "href": "https://cloud.baidu.com"
+    },
+    {
+      "class": "",
+      "content": "iconfont(图标字体)",
+      "href": "http://www.iconfont.cn"
+    },
+    {
+      "class": "",
+      "content": "Github(代码仓库)",
+      "href": "https://github.com"
+    },
+    {
+      "class": "",
+      "content": "tinypng(图片压缩)",
+      "href": "https://tinypng.com"
+    },
+    {
+      "class": "",
+      "content": "Vue.js(前端框架)",
+      "href": "https://cn.vuejs.org"
+    },
+    {
+      "class": "",
+      "content": "360导航",
+      "href": "http://hao.360.cn/"
+    },
+    {
+      "class": "",
+      "content": "360安全浏览器",
+      "href": "http://se.360.cn/"
+    },
+    {
+      "class": "",
+      "content": "有道词典",
+      "href": "http://youdao.com"
+    },
+    {
+      "class": "",
+      "content": "今日头条",
+      "href": "https://www.toutiao.com"
+    },
+    {
+      "class": "",
+      "content": "极客导航",
+      "href": "http://www.jikedaohang.com"
+    },
+    {
+      "class": "",
+      "content": "＋更多",
+      "href": "/about.html"
+    },
+    {
+      "class": "",
+      "content": "",
+      "href": ""
+    }
+  ],
+  "about": [
+    {
+      "class": "pdr20",
+      "content": "邮箱：changeden520@gmail.com",
+      "href": ""
+    },
+    {
+      "class": "pdr20",
+      "content": "Q群：618839726",
+      "href": ""
+    },
+    {
+      "class": "pdr20",
+      "content": "© 2016 兔子人开源",
+      "href": ""
+    },
+    {
+      "class": "",
+      "content": "粤ICP备16095614号",
+      "href": "http://www.miitbeian.gov.cn/"
+    }
+  ]
+}

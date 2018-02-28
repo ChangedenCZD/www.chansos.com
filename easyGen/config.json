@@ -1,0 +1,20 @@
+{
+  "modules": [
+    {
+      "page-title": "例子",
+      "url-path": "/changeden"
+    },
+    {
+      "page-title": "模板例子",
+      "url-path": "/changeden/template"
+    }
+  ],
+  "components": [
+    {
+      "import-path": "/changeden"
+    },
+    {
+      "import-path": "/changeden/chan"
+    }
+  ]
+}

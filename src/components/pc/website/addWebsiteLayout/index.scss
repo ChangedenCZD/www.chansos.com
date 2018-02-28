@@ -1,0 +1,17 @@
+@import "../../../../assets/scss/base";
+
+.pc-website-addWebsiteLayout-layout {
+  .add-website-layout {
+    width: 30%;
+    min-width: 280px;
+    border-radius: 2px;
+    .add-website-info-input {
+      input {
+        border-bottom: 1px solid $orange;
+      }
+    }
+    .submit-btn{
+
+    }
+  }
+}

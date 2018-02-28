@@ -1,0 +1,39 @@
+@import "../../../../assets/scss/base";
+
+.m-alibaba-juhuasuan-layout {
+  .alibaba-module-layout {
+    .alibaba-product-list {
+      .product-item {
+        display: inline-block;
+        a,
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
+        img {
+          display: table-cell;
+        }
+        p {
+          padding: 2px 6px;
+        }
+        .product-item-title {
+          height: 26px;
+          line-height: 22px;
+          font-size: 14px;
+        }
+        .product-item-price,
+        .product-item-end-time {
+          line-height: 22px;
+          padding-top: 0;
+          font-size: 16px;
+        }
+        .product-item-end-time {
+          font-size: 12px;
+        }
+      }
+    }
+    .empty-data-hint {
+      text-align: center;
+    }
+  }
+}

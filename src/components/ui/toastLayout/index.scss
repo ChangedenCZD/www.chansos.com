@@ -1,0 +1,21 @@
+@import "../../../assets/scss/base";
+
+.ui-toastLayout-layout {
+  .content {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, .7);
+    margin-bottom: $s40;
+    border-radius: $s5;
+    text-align: center;
+    min-width: $s100;
+    max-width: 60%;
+    span {
+      letter-spacing: 1px;
+      word-break: normal;
+      width: auto;
+      display: block;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../../assets/scss/base";
+
+$borderColor: rgba(82, 82, 82, 0.5);
+.pc-header-layout {
+  position: static;
+  top: 0;
+  z-index: 10001;
+
+  .navigation-bar-layout {
+    position: fixed;
+    top: 0;
+    transform: translateZ(0);
+    z-index: 10002;
+  }
+
+  .expansion-layout {
+    margin-top: 0;
+  }
+
+  .navigation-bar {
+    height: 48px;
+    li,
+    li a {
+      display: inline-block;
+      text-align: center;
+    }
+
+    li a {
+      padding: 0 24px;
+      font: normal 14px/44px "Microsoft Yahei";
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      color: rgba(0, 0, 0, .7);
+    }
+
+    li a.active {
+      font-weight: bold;
+      border-bottom-color: $borderColor;
+    }
+  }
+
+  .navigation-icon-layout {
+    float: left;
+    padding: 0 24px;
+    .icon {
+      float: left;
+      width: 30px;
+      height: 30px;
+      margin: 9px 10px 9px 0;
+    }
+
+    .name {
+      float: left;
+      font: normal 18px/48px "Microsoft Yahei";
+      font-weight: bold;
+    }
+  }
+
+  .navigation-area {
+    float: right;
+  }
+}

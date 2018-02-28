@@ -1,0 +1,388 @@
+/**px转rem*/
+$fontbase: 32px;
+@function rem($px) {
+  @return $px / $fontbase * 1rem;
+}
+
+/**字体大小*/
+$fontSizeNano: rem(12px);
+$fontSizeMini: rem(14px);
+$fontSizeSmall: rem(16px);
+$fontSizeNormal: rem(18px);
+$fontSizeMiddle: rem(24px);
+$fontSizeLarge: rem(30px);
+
+/**颜色*/
+$red: #F04055;
+$black: #222222;
+$blackLight: #4b4b57;
+$gray: #989898;
+$default: #ededed;
+$white: #FFFFFF;
+$orange: #FE5621;
+$blue: #00AAEE;
+
+body {
+  color: $blackLight;
+  font-size: $fontSizeNormal;
+}
+
+.fs-nano {
+  font-size: $fontSizeNano;
+}
+
+.fs-mini {
+  font-size: $fontSizeMini;
+}
+
+.fs-small {
+  font-size: $fontSizeSmall;
+}
+
+.fs-normal {
+  font-size: $fontSizeNormal;
+}
+
+.fs-middle {
+  font-size: $fontSizeMiddle;
+}
+
+.fs-large {
+  font-size: $fontSizeLarge;
+}
+
+/**文字颜色*/
+.text-red {
+  color: $red;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-black-light {
+  color: $blackLight;
+}
+
+.text-gray {
+  color: $gray;
+}
+
+.text-default {
+  color: $default;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+/**背景颜色*/
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-black-light {
+  background-color: $blackLight;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-default {
+  background-color: $default;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+/*border*/
+
+.border-red {
+  border-color: $red;
+}
+
+.border-orange {
+  border-color: $orange;
+}
+
+.border-blue {
+  border-color: $blue;
+}
+
+/**button*/
+
+button[type="red"] {
+  color: white;
+  background-color: $red;
+  border-color: $red;
+}
+
+button[type="black"] {
+  color: white;
+  background-color: $black;
+  border-color: $black;
+}
+
+button[type="gray"] {
+  color: white;
+  background-color: $gray;
+  border-color: $gray;
+}
+
+button[type="orange"] {
+  color: white;
+  background-color: $orange;
+  border-color: $orange;
+}
+
+button[type="blue"] {
+  color: white;
+  background-color: $blue;
+  border-color: $blue;
+}
+
+button[type="white"] {
+  color: #EE8A1F;
+  background-color: white;
+  border-color: white;
+}
+
+button {
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-out;
+  -moz-transition: -moz-box-shadow 0.2s ease-out;
+  -o-transition: box-shadow 0.2s ease-out;
+}
+
+button[type="black"]:active {
+  background-color: rgba(39, 38, 54, 0.8);
+}
+
+button[type="red"]:active {
+  background-color: rgba(240, 66, 88, 0.8);
+}
+
+button[type="gray"]:active {
+  background-color: rgba(204, 204, 204, 0.8);
+}
+
+button[type="orange"]:active {
+  background-color: rgba(238, 138, 31, 0.8);
+}
+
+button[type="blue"]:active {
+  background-color: rgba(0, 170, 238, 0.8);
+}
+
+button[type="white"]:active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/**尺寸*/
+$s5: rem(5px);
+$s10: rem(10px);
+$s15: rem(15px);
+$s20: rem(20px);
+$s30: rem(30px);
+$s40: rem(40px);
+$s50: rem(50px);
+$s60: rem(60px);
+$s70: rem(70px);
+$s80: rem(80px);
+$s90: rem(90px);
+$s100: rem(100px);
+$s110: rem(110px);
+$s120: rem(120px);
+
+/*padding*/
+
+.pd5 {
+  padding: $s5;
+}
+
+.pdt5 {
+  padding-top: $s5;
+}
+
+.pdb5 {
+  padding-bottom: $s5;
+}
+
+.pdl5 {
+  padding-left: $s5;
+}
+
+.pdr5 {
+  padding-right: $s5;
+}
+
+.pd10 {
+  padding: $s10;
+}
+
+.pdt10 {
+  padding-top: $s10;
+}
+
+.pdb10 {
+  padding-bottom: $s10;
+}
+
+.pdl10 {
+  padding-left: $s10;
+}
+
+.pdr10 {
+  padding-right: $s10;
+}
+
+.pd15 {
+  padding: $s15;
+}
+
+.pdt15 {
+  padding-top: $s15;
+}
+
+.pdb15 {
+  padding-bottom: $s15;
+}
+
+.pdl15 {
+  padding-left: $s15;
+}
+
+.pdr15 {
+  padding-right: $s15;
+}
+
+.pd20 {
+  padding: $s20;
+}
+
+.pdt20 {
+  padding-top: $s20;
+}
+
+.pdb20 {
+  padding-bottom: $s20;
+}
+
+.pdl20 {
+  padding-left: $s20;
+}
+
+.pdr20 {
+  padding-right: $s20;
+}
+
+/*margin*/
+
+.mg5 {
+  margin: $s5;
+}
+
+.mgt5 {
+  margin-top: $s5;
+}
+
+.mgb5 {
+  margin-bottom: $s5;
+}
+
+.mgl5 {
+  margin-left: $s5;
+}
+
+.mgr5 {
+  margin-right: $s5;
+}
+
+.mg10 {
+  margin: $s10;
+}
+
+.mgt10 {
+  margin-top: $s10;
+}
+
+.mgb10 {
+  margin-bottom: $s10;
+}
+
+.mgl10 {
+  margin-left: $s10;
+}
+
+.mgr10 {
+  margin-right: $s10;
+}
+
+.mg15 {
+  margin: $s15;
+}
+
+.mgt15 {
+  margin-top: $s15;
+}
+
+.mgb15 {
+  margin-bottom: $s15;
+}
+
+.mgl15 {
+  margin-left: $s15;
+}
+
+.mgr15 {
+  margin-right: $s15;
+}
+
+.mg20 {
+  margin: $s20;
+}
+
+.mgt20 {
+  margin-top: $s20;
+}
+
+.mgb20 {
+  margin-bottom: $s20;
+}
+
+.mgl20 {
+  margin-left: $s20;
+}
+
+.mgr20 {
+  margin-right: $s20;
+}
+
+$borderStyle: 1px solid #eee;
+

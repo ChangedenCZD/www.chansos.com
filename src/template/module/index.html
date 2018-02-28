@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    var host = window.location.host;
+    if (/chan/.test(host) && window.location.protocol === 'http:') {
+      window.location.protocol = 'https:';
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <meta http-equiv="Cache-Control" content="no-cache"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <link rel="shortcut icon" href="http://image.chansos.com/static/icon_bunny_large.png" type="image/x-icon">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+<div id="app"></div>
+</body>
+
+<span id="document-timestamp" style="display: none;"><%= htmlWebpackPlugin.options.timestamp %></span>
+<script>
+  console.log('Document was create at ' + window.document.querySelector('#document-timestamp').innerText);
+</script>
+</html>
