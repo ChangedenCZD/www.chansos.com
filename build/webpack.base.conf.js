@@ -1,35 +1,50 @@
 'use strict';
+const shell = require('shelljs');
 const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
 const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
+const md5 = require('md5');
 const srcDir = path.resolve(__dirname, '../src');
+const entryRootPath = path.resolve(srcDir, './entry');
 let entriesParser = getEntry(srcDir + '/module/**/config.json');
 let entries = entriesParser[0];
 let modulePageTitleList = entriesParser[1] || {};
 let dirname = __dirname;
 
 // 获取入口文件
-function getEntry(globPath) {
+function getEntry (globPath) {
   let entries = {}, modulePageTitleList = {};
+  // 移除所有旧入口
+  shell.rm('-rf', entryRootPath);
+  shell.mkdir('-p', entryRootPath);
+  // 根据config.json创建新入口
   glob.sync(globPath).forEach(function (filePath) {
     let config = require(filePath);
-    let moduleEntry = config['module-entry'] || '';
     let redirectUrl = (config['redirect-url'] || '').replace(/.html/g, '').split('/').filter((item) => {
       return !!item;
     }).join('/');
     let pageTitle = config['page-title'] || '';
-    entries[redirectUrl] = filePath.substr(0, filePath.lastIndexOf('/') + 1) + moduleEntry;
+    const modulePath = path.relative(entryRootPath, path.resolve(filePath, '../') + '/module.vue');
+    let entryFilePath = path.resolve(entryRootPath, `./${md5(redirectUrl)}.js`);
+    fs.writeFileSync(entryFilePath, `'use strict';
+import {createEntry} from '../main.js';
+import myComponent from '${modulePath}';
+const app = createEntry(myComponent);
+// Update at ${new Date()}
+`, 'utf8');
     modulePageTitleList[redirectUrl] = pageTitle;
+    entries[redirectUrl] = entryFilePath;
   });
   genEntriesInfoFile(entries, modulePageTitleList);
   return [entries, modulePageTitleList];
 }
 
 // 生成Html文件
-function createHtml() {
+function createHtml () {
   let r = [], conf;
   Object.keys(entries).forEach((key) => {
     conf = {
@@ -51,7 +66,7 @@ function createHtml() {
   return r;
 }
 
-function genEntriesInfoFile(entries, modulePageTitleList) {
+function genEntriesInfoFile (entries, modulePageTitleList) {
   setTimeout(() => {
     let entryArray = {};
     Object.keys(entries).forEach(key => {
@@ -65,13 +80,11 @@ function genEntriesInfoFile(entries, modulePageTitleList) {
         pageTitle: modulePageTitleList[key] || ''
       };
     });
-    require('fs').writeFile(`${resolve('')}/PagesInfo.json`, JSON.stringify(entryArray), 'utf8', err => {
-      if (err) console.error(err);
-    });
+    fs.writeFileSync(`${resolve('')}/PagesInfo.json`, JSON.stringify(entryArray), 'utf8');
   }, 1);
 }
 
-function resolve(dir) {
+function resolve (dir) {
   return path.join(dirname, '..', dir);
 }
 

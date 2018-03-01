@@ -80,13 +80,13 @@ class Module extends Context {
     |--- component.scss // 组件中vue单文件的样式引用
     |--- component.vue // 组件中vue单文件
     |--- index.js // 组建入口
+  |--- entry // 入口文件夹（自动化生成）
   |--- lib // 有关class封装
     |--- ApiOptions.js // Api参数封装类，内部包含request方法
     |--- Context.js // 基类，内部引入了Api组件
     |--- BaseModule.js // Module的基类，继承于BaseClass，实现了Vue的部分生命周期
   |--- module // 页面
-    |--- config.json // 页面的配置文件（包含入口文件字段module-entry，页面标题字段page-title，相对网页访问路径字段redirect-url）
-    |--- index.json // 入口文件，可自定义（自定义后在对应配置文件中修改module-entry字段）
+    |--- config.json // 页面的配置文件（包含页面标题字段page-title，相对网页访问路径字段redirect-url）
     |--- module.js // 页面中默认vue单文件的js引用
     |--- module.scss // 页面中默认vue单文件的样式引用
     |--- module.vue // 页面中默认vue单文件

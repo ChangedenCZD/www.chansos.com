@@ -56,20 +56,6 @@ function genModules(modules) {
       let parentPath = getParentPath(pathArray);
       let outputFilePath = `${fullPath}/${fileName}.`;
       writeTemplateForList([
-        // {
-        //   'input': `${TEMPLATE_MODULE_FILE_PATH}index.html`,
-        //   'output': `${outputFilePath}html`,
-        //   'regs': {
-        //     'PageTitle': pageTitle
-        //   }
-        // },
-        {
-          'input': `${TEMPLATE_MODULE_FILE_PATH}index.js`,
-          'output': `${outputFilePath}js`,
-          'regs': {
-            '../../main': `${parentPath}main`
-          }
-        },
         {
           'input': `${TEMPLATE_MODULE_FILE_PATH}module.scss`,
           'output': `${fullPath}/module.scss`,
@@ -95,7 +81,6 @@ function genModules(modules) {
           'input': `${TEMPLATE_MODULE_FILE_PATH}config.json`,
           'output': `${fullPath}/config.json`,
           'regs': {
-            'moduleEntry': `${fileName}.js`,
             'redirectUrl': `${urlPath}`,
             'pageTitle': `${pageTitle}`
           }
