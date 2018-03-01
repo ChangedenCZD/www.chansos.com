@@ -1,6 +1,6 @@
 import {BaseModule, mapGetters, mapActions} from '../../../lib/BaseModule';
-import MSimpleStyle from '../../../components/m/simpleStyle/index.vue';
-import PcAlibabaSearchBar from '../../../components/pc/alibaba/searchBar/index.vue';
+import MSimpleStyle from '../../../components/m/simpleStyle';
+import PcAlibabaSearchBar from '../../../components/pc/alibaba/searchBar';
 import * as DateUtils from '../../../../utils/DateUtils';
 
 class Module extends BaseModule {

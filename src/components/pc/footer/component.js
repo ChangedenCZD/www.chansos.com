@@ -1,10 +1,11 @@
-import {BaseModule, mapGetters, mapActions} from '../../lib/BaseModule';
-import PcSimpleStyle from '../../components/pc/simpleStyle';
+import {BaseModule, mapActions, mapGetters} from '../../../lib/BaseModule';
+import footer from '../../../assets/json/footer';
 
-class Module extends BaseModule {
+class Component extends BaseModule {
   constructor () {
     super();
-    this.setComponent({PcSimpleStyle});
+    this.setProps([]);
+    this.setComponent({});
     this.setMethod({
       ...mapActions([])
     });
@@ -19,20 +20,16 @@ class Module extends BaseModule {
 
   getData () {
     return {
-      url: ''
+      footer
     };
   }
 
   onCreate () {
     super.onCreate();
-    let app = this.app;
-    app.$nextTick(() => {
-      app.url = app.$route.query.url;
-    });
   }
 
   onMount () {
   }
 }
 
-module.exports = Module;
+module.exports = Component;

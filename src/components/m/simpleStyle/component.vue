@@ -1,20 +1,19 @@
 <template>
-  <section class="component-layout pc-simpleStyle-layout"
+  <section class="component-layout m-simpleStyle-layout"
            :style="{'min-width':windowWidth+'px','min-height':windowHeight+'px'}">
-    <PcHeaderLayout></PcHeaderLayout>
-    <section class="content-wrap w c-h pdt5">
+    <MHeaderLayout></MHeaderLayout>
+    <section class="content-wrap w100 c-h pdt5">
       <slot></slot>
     </section>
-    <PcFooterLayout></PcFooterLayout>
-    <PcAdsLayout></PcAdsLayout>
+    <MFooterLayout></MFooterLayout>
     <ToastLayout></ToastLayout>
     <LoadingLayout></LoadingLayout>
   </section>
 </template>
 
 <script>
-  import './index.scss';
+  import './component.scss';
 
-  const Component = require('./index');
+  const Component = require('./component');
   export default new Component();
 </script>

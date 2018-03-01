@@ -4,8 +4,8 @@
 </template>
 
 <script>
-  import './index.scss';
+  import './component.scss';
 
-  const Component = require('./index');
+  const Component = require('./component');
   export default new Component();
 </script>

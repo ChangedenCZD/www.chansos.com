@@ -116,24 +116,28 @@ function genComponents(components) {
       console.log(`start to gen component ${importPath}`);
       mkdir('-p', fullPath);
       let parentPath = getParentPath(pathArray);
-      let outputFilePath = `${fullPath}/index.`;
+      let outputFilePath = `${fullPath}/component.`;
       writeTemplateForList([
         {
           'input': `${TEMPLATE_COMPONENT_FILE_PATH}index.js`,
+          'output': `${fullPath}/index.js`
+        },
+        {
+          'input': `${TEMPLATE_COMPONENT_FILE_PATH}component.js`,
           'output': `${outputFilePath}js`,
           'regs': {
             '../../lib/BaseModule': `${parentPath}lib/BaseModule`
           }
         },
         {
-          'input': `${TEMPLATE_COMPONENT_FILE_PATH}index.scss`,
+          'input': `${TEMPLATE_COMPONENT_FILE_PATH}component.scss`,
           'output': `${outputFilePath}scss`,
           'regs': {
             '../../assets/scss/base': `${parentPath}assets/scss/base`
           }
         },
         {
-          'input': `${TEMPLATE_COMPONENT_FILE_PATH}index.vue`,
+          'input': `${TEMPLATE_COMPONENT_FILE_PATH}component.vue`,
           'output': `${outputFilePath}vue`,
           'regs': {
             '<section>': `<section class="component-layout ${pathArray.join('-')}-layout">`

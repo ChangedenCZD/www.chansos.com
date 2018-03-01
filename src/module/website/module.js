@@ -1,6 +1,6 @@
 import {BaseModule, mapGetters, mapActions} from '../../lib/BaseModule';
-import PcSimpleStyle from '../../components/pc/simpleStyle/index.vue';
-import AddWebsiteLayout from '../../components/pc/website/addWebsiteLayout/index.vue';
+import PcSimpleStyle from '../../components/pc/simpleStyle';
+import AddWebsiteLayout from '../../components/pc/website/addWebsiteLayout';
 
 class Module extends BaseModule {
   constructor () {

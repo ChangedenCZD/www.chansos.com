@@ -1,5 +1,5 @@
 import {BaseModule, mapGetters, mapActions} from '../../../lib/BaseModule';
-import MSimpleStyle from '../../../components/m/simpleStyle/index.vue';
+import MSimpleStyle from '../../../components/m/simpleStyle';
 
 class Module extends BaseModule {
   constructor () {

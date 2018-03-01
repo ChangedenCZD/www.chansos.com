@@ -1,6 +1,6 @@
 import {BaseModule, mapGetters, mapActions} from '../../../lib/BaseModule';
-import MSimpleStyle from '../../../components/m/simpleStyle/index.vue';
-import PcArticleLayout from '../../../components/pc/article/articleLayout/index.vue';
+import MSimpleStyle from '../../../components/m/simpleStyle';
+import PcArticleLayout from '../../../components/pc/article/articleLayout';
 import * as DateUtils from '../../../../utils/DateUtils';
 
 class Module extends BaseModule {

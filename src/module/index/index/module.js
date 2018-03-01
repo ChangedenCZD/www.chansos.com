@@ -1,9 +1,9 @@
-import ToastLayout from '../../../components/ui/toastLayout/index.vue';
-import LoadingLayout from '../../../components/ui/loadingLayout/index.vue';
-import AlertDialog from '../../../components/ui/dialog/alert/index.vue';
-import ConfirmDialog from '../../../components/ui/dialog/confirm/index.vue';
-import InputDialog from '../../../components/ui/dialog/input/index.vue';
-import SelectorDialog from '../../../components/ui/dialog/selector/index.vue';
+import ToastLayout from '../../../components/ui/toastLayout';
+import LoadingLayout from '../../../components/ui/loadingLayout';
+import AlertDialog from '../../../components/ui/dialog/alert';
+import ConfirmDialog from '../../../components/ui/dialog/confirm';
+import InputDialog from '../../../components/ui/dialog/input';
+import SelectorDialog from '../../../components/ui/dialog/selector';
 import {BaseModule, mapGetters, mapActions} from '../../../lib/BaseModule';
 
 class Module extends BaseModule {
