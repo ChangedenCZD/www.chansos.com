@@ -76,9 +76,10 @@ class Module extends Context {
   |--- api // Api组件
   |--- assets // 网页中的静态资源
   |--- components // 组件
-    |--- index.js // 组件中vue单文件的js引用
-    |--- index.scss // 组件中vue单文件的样式引用
-    |--- index.vue // 组件中vue单文件
+    |--- component.js // 组件中vue单文件的js引用
+    |--- component.scss // 组件中vue单文件的样式引用
+    |--- component.vue // 组件中vue单文件
+    |--- index.js // 组建入口
   |--- lib // 有关class封装
     |--- ApiOptions.js // Api参数封装类，内部包含request方法
     |--- Context.js // 基类，内部引入了Api组件
