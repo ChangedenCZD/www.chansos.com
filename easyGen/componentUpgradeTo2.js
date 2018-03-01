@@ -10,11 +10,13 @@ glob.sync(srcDir + '/components/**/index.vue').forEach(entry => {
     console.log(parentDir);
     files.forEach(file => {
       let filePath = path.resolve(parentDir, file);
-      if (file.endsWith('.vue')) {
-        let content = fs.readFileSync(filePath, 'utf8');
-        fs.writeFileSync(filePath, content.replace(/\.\/index/g, './component'), 'utf8');
+      if (fs.statSync(filePath).isFile()) {
+        if (file.endsWith('.vue')) {
+          let content = fs.readFileSync(filePath, 'utf8');
+          fs.writeFileSync(filePath, content.replace(/\.\/index/g, './component'), 'utf8');
+        }
+        fs.renameSync(filePath, `${parentDir}/component.${file.split('.')[1]}`);
       }
-      fs.renameSync(filePath, `${parentDir}/component.${file.split('.')[1]}`);
     });
     let entryFilePath = path.resolve(parentDir, entryFileName);
     fs.writeFileSync(entryFilePath, 'module.exports = require(\'./component.vue\');', 'utf8');
