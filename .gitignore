@@ -4,6 +4,7 @@ secret/
 dist/
 public/
 static/
+src/entry/
 package-lock.json
 PagesInfo.json
 www.chansos.com.iml
