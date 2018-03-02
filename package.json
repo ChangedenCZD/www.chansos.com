@@ -1,6 +1,6 @@
 {
   "name": "www.chansos.com",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "start": "node ./start.js",
@@ -17,6 +17,7 @@
   "author": "Changeden",
   "license": "ISC",
   "dependencies": {
+    "ali-oss": "^4.12.2",
     "axios": "^0.17.1",
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "~1.18.2",

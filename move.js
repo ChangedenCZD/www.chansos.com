@@ -1,6 +1,10 @@
 /* eslint-disable no-undef */
 require('shelljs/global');
 const fs = require('fs-extra');
+const BuildUtils = require('./utils/BuildUtils');
+
+BuildUtils.uploadWebsiteStaticFile();
+BuildUtils.fixWebsiteHtmlFile();
 
 let targetDir = 'public';
 let list = fs.readdirSync('dist');

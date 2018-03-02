@@ -3,7 +3,7 @@
     <section class="footer-area w">
       <div class="info-layout">
         <h3 class="icon-layout" title="兔子人开源">
-          <img src="../../../assets/img/icon_bunny_large.png"/>
+          <img src="https://image.chansos.com/static/icon_bunny_large.png"/>
           <span>兔子人开源</span>
         </h3>
         <p v-for="item in footer.info" :class="[item.class]" :title="item.content">

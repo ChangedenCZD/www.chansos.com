@@ -10,7 +10,7 @@
       <div class="rect5"></div>
     </div>
     <div class="spinner" v-else>
-      <img id="loadingImage" :class="['t'+deg]" src="../../../assets/img/loading_icon.png"/>
+      <img id="loadingImage" :class="['t'+deg]" src="https://image.chansos.com/static/loading_icon.png"/>
     </div>
   </section>
 </template>

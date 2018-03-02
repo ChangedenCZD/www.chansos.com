@@ -3,7 +3,7 @@
     <div class="navigation-bar-layout w100">
       <div class="navigation-bar w100 c-h bg-white shadow-bottom">
         <div class="navigation-icon-layout">
-          <img class="icon" src="../../../assets/img/icon_bunny_large.png"/>
+          <img class="icon" src="https://image.chansos.com/static/icon_bunny_large.png"/>
           <span class="name">兔子人开源</span>
         </div>
         <div class="navigation-more">
