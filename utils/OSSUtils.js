@@ -12,8 +12,9 @@ class OSSClient {
   }
 
   uploadFileSync (remoteFilePath, localFilePath) {
+    let self = this;
     co(function* () {
-      let result = yield uploadFile(remoteFilePath, localFilePath);
+      let result = yield self.uploadFile(remoteFilePath, localFilePath);
       if (result.res.status === 200) {
         console.log(`${remoteFilePath} upload success.`);
       } else {
@@ -36,29 +37,6 @@ class ImageClient extends OSSClient {
   constructor () {
     super(ALI_OSS_CONFIGS['image']);
   }
-}
-
-function uploadFile (remoteFilePath, localFilePath) {
-  const client = new OSS({
-    region: 'oss-cn-shenzhen',
-    accessKeyId: 'LTAIFAqWV5iLdPS1',
-    accessKeySecret: 'QANuZIw5rppequqt9RgCM9AjLxzqEB',
-    bucket: 'official-file'
-  });
-  return client.put(remoteFilePath, localFilePath);
-}
-
-function uploadFileSync (remoteFilePath, localFilePath) {
-  co(function* () {
-    let result = yield uploadFile(remoteFilePath, localFilePath);
-    if (result.res.status === 200) {
-      console.log(`${remoteFilePath} upload success.`);
-    } else {
-      throw new Error(`${remoteFilePath} upload fail.`);
-    }
-  }).catch(function (err) {
-    console.log(err);
-  });
 }
 
 module.exports = {FileClient, ImageClient};

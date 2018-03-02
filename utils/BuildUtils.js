@@ -6,9 +6,10 @@ const distDir = path.resolve(__dirname, '../dist');
 function uploadWebsiteStaticFile () {
   let staticFileList = glob.sync(`${distDir}/**/static/**/*.*`) || [];
   const OSSUtils = require('./OSSUtils');
+  const FileClient = new OSSUtils.FileClient();
   staticFileList.forEach(filePath => {
     let fileName = filePath.substr(filePath.indexOf('static/'));
-    new OSSUtils.FileClient().uploadFileSync(fileName, filePath);
+    FileClient.uploadFileSync(fileName, filePath);
   });
 }
 
