@@ -41,7 +41,7 @@ app.use(lessMiddleware(path.join(dirname, 'public')));
 app.use(express.static(path.join(dirname, 'public')));
 
 // 动态添加路由
-const routeRootDir = path.resolve(dirname, './routes');
+const routeRootDir = (path.resolve(dirname, './routes') || '').replace(/\\/g, '/');
 glob.sync(`${routeRootDir}/**/*.js`).forEach(entry => {
   let routePath = entry.replace(new RegExp(routeRootDir), '').replace(new RegExp('.js'), '');
   if (routePath.endsWith('/index')) {
