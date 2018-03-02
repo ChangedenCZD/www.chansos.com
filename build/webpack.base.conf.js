@@ -28,7 +28,7 @@ function getEntry (globPath) {
       return !!item;
     }).join('/');
     let pageTitle = config['page-title'] || '';
-    const modulePath = path.relative(entryRootPath, path.resolve(filePath, '../') + '/module.vue');
+    const modulePath = path.relative(entryRootPath, path.resolve(filePath, '../') + '/module.vue').replace(/\\/g, '/');
     let entryFilePath = path.resolve(entryRootPath, `./${md5(redirectUrl)}.js`);
     fs.writeFileSync(entryFilePath, `'use strict';
 import {createEntry} from '../main.js';
