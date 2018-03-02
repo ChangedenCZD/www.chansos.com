@@ -9,7 +9,10 @@ class Component extends BaseModule {
       ...mapActions([])
     });
     this.setCompute({
-      ...mapGetters({})
+      ...mapGetters({
+        windowWidth: 'windowWidth',
+        windowHeight: 'windowHeight'
+      })
     });
     this.setWatch({});
   }

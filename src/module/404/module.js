@@ -1,10 +1,12 @@
 import {BaseModule, mapGetters, mapActions} from '../../lib/BaseModule';
-import PcSimpleStyle from '../../components/pc/simpleStyle';
+import Bootstrap from '../../components/bootstrap';
+import PcLayout from '../../components/pc/page/404';
+import MLayout from '../../components/m/page/404';
 
 class Module extends BaseModule {
-  constructor () {
+  constructor() {
     super();
-    this.setComponent({PcSimpleStyle});
+    this.setComponent({Bootstrap, PcLayout, MLayout});
     this.setMethod({
       ...mapActions([])
     });
@@ -17,21 +19,15 @@ class Module extends BaseModule {
     this.setWatch({});
   }
 
-  getData () {
-    return {
-      url: ''
-    };
+  getData() {
+    return {};
   }
 
-  onCreate () {
+  onCreate() {
     super.onCreate();
-    let app = this.app;
-    app.$nextTick(() => {
-      app.url = app.$route.query.url;
-    });
   }
 
-  onMount () {
+  onMount() {
   }
 }
 

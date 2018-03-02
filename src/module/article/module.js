@@ -1,54 +1,14 @@
 import {BaseModule, mapGetters, mapActions} from '../../lib/BaseModule';
-import PcSimpleStyle from '../../components/pc/simpleStyle';
-import PcArticleLayout from '../../components/pc/article/articleLayout';
+import Bootstrap from '../../components/bootstrap';
+import PcLayout from '../../components/pc/page/article';
+import MLayout from '../../components/m/page/article';
 
 class Module extends BaseModule {
-  constructor () {
+  constructor() {
     super();
-    let api = this.Api;
-    this.setComponent({PcSimpleStyle, PcArticleLayout});
+    this.setComponent({Bootstrap, PcLayout, MLayout});
     this.setMethod({
-      ...mapActions([]),
-      fetchProjectList () {
-        let self = this;
-        api.getProjectArticleList(self.page, self.pageSize, self.keyword).then(data => {
-          if (data.code === 0 && data.result) {
-            self.fetchToutiaoList();
-            self.projectList = data.result.itemList || [];
-          } else {
-            throw new Error(data.message);
-          }
-        }).catch(err => {
-          self.fetchToutiaoList();
-          console.error(err);
-        });
-      },
-      fetchToutiaoList () {
-        let self = this;
-        api.getToutiaoArticleList(self.page, self.pageSize, self.keyword).then(data => {
-          if (data.code === 0 && data.result) {
-            self.fetchGongzhonghaoList();
-            self.toutiaoList = data.result.itemList || [];
-          } else {
-            throw new Error(data.message);
-          }
-        }).catch(err => {
-          self.fetchGongzhonghaoList();
-          console.error(err);
-        });
-      },
-      fetchGongzhonghaoList () {
-        let self = this;
-        api.getGongzhonghaoArticleList(self.page, self.pageSize, self.keyword).then(data => {
-          if (data.code === 0 && data.result) {
-            self.gongzhonghaoList = data.result.itemList || [];
-          } else {
-            throw new Error(data.message);
-          }
-        }).catch(err => {
-          console.error(err);
-        });
-      }
+      ...mapActions([])
     });
     this.setCompute({
       ...mapGetters({
@@ -56,29 +16,18 @@ class Module extends BaseModule {
         windowHeight: 'windowHeight'
       })
     });
-    this.setWatch({
-      windowWidth () {
-        this.fetchProjectList();
-      }
-    });
+    this.setWatch({});
   }
 
-  getData () {
-    return {
-      page: 1,
-      pageSize: 4,
-      keyword: '',
-      projectList: [],
-      toutiaoList: [],
-      gongzhonghaoList: []
-    };
+  getData() {
+    return {};
   }
 
-  onCreate () {
+  onCreate() {
     super.onCreate();
   }
 
-  onMount () {
+  onMount() {
   }
 }
 

@@ -1,26 +1,14 @@
 import {BaseModule, mapGetters, mapActions} from '../../../lib/BaseModule';
-import PcSimpleStyle from '../../../components/pc/simpleStyle';
-import PcArticleLayout from '../../../components/pc/article/articleLayout';
+import Bootstrap from '../../../components/bootstrap';
+import PcLayout from '../../../components/pc/page/article/gongzhonghao';
+import MLayout from '../../../components/m/page/article/gongzhonghao';
 
 class Module extends BaseModule {
-  constructor () {
+  constructor() {
     super();
-    let api = this.Api;
-    this.setComponent({PcSimpleStyle, PcArticleLayout});
+    this.setComponent({Bootstrap, PcLayout, MLayout});
     this.setMethod({
-      ...mapActions([]),
-      fetchArticleList () {
-        let self = this;
-        api.getGongzhonghaoArticleList(self.page, self.pageSize, self.keyword).then(data => {
-          if (data.code === 0 && data.result) {
-            self.itemList = data.result.itemList || [];
-          } else {
-            throw new Error(data.message);
-          }
-        }).catch(err => {
-          console.error(err);
-        });
-      }
+      ...mapActions([])
     });
     this.setCompute({
       ...mapGetters({
@@ -28,30 +16,18 @@ class Module extends BaseModule {
         windowHeight: 'windowHeight'
       })
     });
-    this.setWatch({
-      windowWidth () {
-        this.fetchArticleList();
-      },
-      page () {
-        this.fetchArticleList();
-      }
-    });
+    this.setWatch({});
   }
 
-  getData () {
-    return {
-      page: 1,
-      pageSize: 10,
-      keyword: '',
-      itemList: []
-    };
+  getData() {
+    return {};
   }
 
-  onCreate () {
+  onCreate() {
     super.onCreate();
   }
 
-  onMount () {
+  onMount() {
   }
 }
 

@@ -19,7 +19,7 @@ class Component extends BaseModule {
       }),
       path () {
         if (!this.currentPath) {
-          this.currentPath = this.$route.path.replace(/\/m/, '');
+          this.currentPath = this.$route.path;
           if (this.currentPath === '/') {
             this.currentPath = '/index.html';
           }

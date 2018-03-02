@@ -1,10 +1,12 @@
 import {BaseModule, mapGetters, mapActions} from '../../lib/BaseModule';
-import PcSimpleStyle from '../../components/pc/simpleStyle';
+import Bootstrap from '../../components/bootstrap';
+import PcLayout from '../../components/pc/page/about';
+import MLayout from '../../components/m/page/about';
 
 class Module extends BaseModule {
-  constructor () {
+  constructor() {
     super();
-    this.setComponent({PcSimpleStyle});
+    this.setComponent({Bootstrap, PcLayout, MLayout});
     this.setMethod({
       ...mapActions([])
     });
@@ -17,15 +19,15 @@ class Module extends BaseModule {
     this.setWatch({});
   }
 
-  getData () {
+  getData() {
     return {};
   }
 
-  onCreate () {
+  onCreate() {
     super.onCreate();
   }
 
-  onMount () {
+  onMount() {
   }
 }
 

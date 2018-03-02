@@ -1,59 +1,14 @@
 import {BaseModule, mapGetters, mapActions} from '../../lib/BaseModule';
-import PcSimpleStyle from '../../components/pc/simpleStyle';
-import AddWebsiteLayout from '../../components/pc/website/addWebsiteLayout';
+import Bootstrap from '../../components/bootstrap';
+import PcLayout from '../../components/pc/page/website';
+import MLayout from '../../components/m/page/website';
 
 class Module extends BaseModule {
-  constructor () {
+  constructor() {
     super();
-    let api = this.Api;
-    this.setComponent({PcSimpleStyle, AddWebsiteLayout});
+    this.setComponent({Bootstrap, PcLayout, MLayout});
     this.setMethod({
-      ...mapActions(['showLoading', 'showToast', 'showAddWebsite']),
-      fetchWebsiteTypeList () {
-        let self = this;
-        api.websiteTypeList().then(data => {
-          if (data.code === 0 && data.result) {
-            self.typeList = (data.result.itemList || []).sort(left => {
-              return left.type === 0;
-            });
-            self.fetchWebsiteListForIndex(0);
-          } else {
-            throw new Error(data.message);
-          }
-        }).catch(err => {
-          console.error(err);
-        });
-      },
-      fetchWebsiteListForIndex (index) {
-        let self = this;
-        let typeList = self.typeList || [];
-        let length = typeList.length;
-        if (index < length) {
-          self.fetchWebsiteList(typeList[index].type).then(() => {
-            self.typeList = typeList.concat();
-            self.fetchWebsiteListForIndex(index + 1);
-          });
-        }
-      },
-      fetchWebsiteList (type) {
-        let self = this;
-        return new Promise(resolve => {
-          api.websiteList(type).then(data => {
-            if (data.code === 0 && data.result) {
-              self.websiteList[type] = data.result.itemList;
-              resolve();
-            } else {
-              throw new Error(data.message);
-            }
-          }).catch(err => {
-            console.error(err);
-            resolve();
-          });
-        });
-      },
-      en (url) {
-        return `${url}${url.indexOf('?') < 0 ? '?' : '&'}returnUrl=${encodeURIComponent(window.location.origin)}`;
-      }
+      ...mapActions([])
     });
     this.setCompute({
       ...mapGetters({
@@ -61,25 +16,18 @@ class Module extends BaseModule {
         windowHeight: 'windowHeight'
       })
     });
-    this.setWatch({
-      windowWidth () {
-        this.fetchWebsiteTypeList();
-      }
-    });
+    this.setWatch({});
   }
 
-  getData () {
-    return {
-      typeList: [],
-      websiteList: {}
-    };
+  getData() {
+    return {};
   }
 
-  onCreate () {
+  onCreate() {
     super.onCreate();
   }
 
-  onMount () {
+  onMount() {
   }
 }
 

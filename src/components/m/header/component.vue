@@ -16,7 +16,7 @@
       <div class="navigation-area" v-show="isShowMenu" @click.self="isShowMenu=false">
         <ul class="navigation-menu-list shadow">
           <li v-for="item in navigation" class="clickable" v-if="!isActive(item)">
-            <a :href="'/m'+item.href">{{item.title}}</a>
+            <a :href="item.href">{{item.title}}</a>
           </li>
         </ul>
       </div>
