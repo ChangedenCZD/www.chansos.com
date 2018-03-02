@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+secret/
+dist/
+public/
+static/
+package-lock.json
+PagesInfo.json
+www.chansos.com.iml
