@@ -4,13 +4,13 @@ import MSimpleStyle from '../../../simpleStyle';
 import PcAlibabaSearchBar from '../../../../pc/alibaba/searchBar';
 
 class Component extends BaseModule {
-  constructor () {
+  constructor() {
     super();
     let api = this.Api;
     this.setComponent({MSimpleStyle, PcAlibabaSearchBar});
     this.setMethod({
       ...mapActions([]),
-      fetchKeywordList () {
+      fetchKeywordList() {
         let self = this;
         api.alibabaCouponKeywordList(5).then(data => {
           if (data.code === 0 && data.result) {
@@ -25,7 +25,7 @@ class Component extends BaseModule {
           console.error(err);
         });
       },
-      setAlibabaSearchBarOptions () {
+      setAlibabaSearchBarOptions() {
         let self = this;
         self.alibabaSearchBarOptions = {
           keywordList: self.keywordList,
@@ -33,13 +33,13 @@ class Component extends BaseModule {
           onSearch: self.search
         };
       },
-      search (keyword) {
+      search(keyword) {
         let self = this;
-        keyword = keyword || (self.keywordList[0] && self.keywordList[0].keyword) || '电脑';
+        self.keyword = keyword || (self.keywordList[0] && self.keywordList[0].keyword) || '电脑';
         self.page = 1;
-        self.fetchCouponList(keyword);
+        self.fetchCouponList(self.keyword);
       },
-      fetchCouponList (keyword) {
+      fetchCouponList(keyword) {
         let self = this;
         api.alibabaCouponList(self.page, self.pageSize, keyword).then(data => {
           if (data.code === 0 && data.result) {
@@ -52,9 +52,9 @@ class Component extends BaseModule {
           console.error(err);
         });
       },
-      onKeywordChanged (keyword) {
+      onKeywordChanged(keyword) {
       },
-      setProductWidth () {
+      setProductWidth() {
         this.$nextTick(() => {
           let parent = this.$el.querySelector('.alibaba-product-list');
           if (parent) {
@@ -64,7 +64,7 @@ class Component extends BaseModule {
           }
         });
       },
-      format (time) {
+      format(time) {
         return DateUtils.format(time, 'yyyy-mm-dd HH:MM:ss');
       }
     });
@@ -75,11 +75,11 @@ class Component extends BaseModule {
       })
     });
     this.setWatch({
-      windowWidth (value) {
+      windowWidth(value) {
         this.pageSize = this.maxCount * 5;
         this.fetchKeywordList();
       },
-      page () {
+      page() {
         this.itemList = [];
         this.$nextTick(() => {
           this.fetchCouponList(this.keyword);
@@ -88,7 +88,7 @@ class Component extends BaseModule {
     });
   }
 
-  getData () {
+  getData() {
     return {
       keyword: '',
       keywordList: [],
@@ -103,11 +103,11 @@ class Component extends BaseModule {
     };
   }
 
-  onCreate () {
+  onCreate() {
     super.onCreate();
   }
 
-  onMount () {
+  onMount() {
   }
 }
 

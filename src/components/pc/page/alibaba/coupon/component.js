@@ -35,9 +35,9 @@ class Component extends BaseModule {
       },
       search(keyword) {
         let self = this;
-        keyword = keyword || (self.keywordList[0] && self.keywordList[0].keyword) || '电脑';
+        self.keyword = keyword || (self.keywordList[0] && self.keywordList[0].keyword) || '电脑';
         self.page = 1;
-        self.fetchCouponList(keyword);
+        self.fetchCouponList(self.keyword);
       },
       fetchCouponList(keyword) {
         let self = this;
